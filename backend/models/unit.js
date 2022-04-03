@@ -9,6 +9,13 @@ const UnitSchema = new mongoose.Schema({
     type: "ObjectId",
     ref: "Kind",
   },
+  questions: [
+    {
+      type: "ObjectId",
+      ref: "Question",
+      autopopulate: true,
+    },
+  ],
 });
 
 UnitSchema.plugin(require("mongoose-autopopulate"));
