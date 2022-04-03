@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const kindsRouter = require("./kinds");
+const kindsRouter = require("./routes/kinds");
+const unitsRouter = require("./routes/units");
 
 require("./mongo–connection");
 
@@ -9,6 +10,7 @@ const app = express();
 app.use(bodyParser.json());
 
 app.use("/kinds", kindsRouter);
+app.use("/units", unitsRouter);
 
 const port = 3000;
 
