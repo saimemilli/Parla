@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const helmet = require("helmet");
 const kindsRouter = require("./routes/kinds");
 const unitsRouter = require("./routes/units");
 
@@ -7,6 +8,7 @@ require("./mongo–connection");
 
 const app = express();
 
+app.use(helmet());
 app.use(bodyParser.json());
 
 app.use("/kinds", kindsRouter);
