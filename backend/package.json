@@ -13,6 +13,7 @@
     "express": "^4.17.3",
     "express-mongo-sanitize": "^2.2.0",
     "helmet": "^5.0.2",
+    "http-errors": "^2.0.0",
     "mongoose": "^6.2.9",
     "mongoose-autopopulate": "^0.16.0"
   }
