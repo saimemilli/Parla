@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const helmet = require("helmet");
+const sanitize = require("express-mongo-sanitize").sanitize;
 const kindsRouter = require("./routes/kinds");
 const unitsRouter = require("./routes/units");
 
@@ -11,6 +12,12 @@ const app = express();
 app.use(helmet());
 app.use(bodyParser.json());
 
+app.all("*", (req, res, next) => {
+  req.body = sanitize(req.body);
+  req.headers = sanitize(req.headers);
+  req.params = sanitize(req.params);
+  next();
+});
 app.use("/kinds", kindsRouter);
 app.use("/units", unitsRouter);
 
