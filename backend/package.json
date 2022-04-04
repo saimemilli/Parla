@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js"
+    "dev": "nodemon ./bin/www"
   },
   "author": "Saime Milli <saimemilli@gmail.com>",
   "license": "ISC",
